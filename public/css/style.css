@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-page {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #84c9ef;
+}
+
+.login-box {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 70%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.login-page .login-box .form-box {
+  background-color: whitesmoke;
+  width: 50%;
+}
+
+.login-box .image {
+  width: 50%;
+  overflow: hidden;
+}
+
+.login-box .image img {
+  height: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 25px 30px;
+  position: relative;
+}
+
+form .username,
+form .password {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-box .logo {
+  display: flex;
+  align-items: center;
+  padding: 3px 25px;
+}
+
+.form-box .logo img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.form-box .logo span {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 22px;
+  font-family: "Playfair Display", serif;
+}
+
+form .text p {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+form .text span {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+input {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+}
+
+.button {
+  background: #e3b1d2;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top: 30px;
+}
+
+.button:hover {
+  background: #b4d2ed;
+}
