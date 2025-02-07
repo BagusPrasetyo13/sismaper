@@ -1,15 +1,20 @@
 <?php
 
-$db_host = "localhost";
-$db_username = "root";
-$db_password = "";
-$db_name = "sismaper";
+class Database
+{
 
-$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+  protected $conn;
+  public function __construct()
+  {
+    $this->conn = new mysqli("localhost", "root", "", "sismaper");
 
-// CREATE CONNECTION
-if ($conn->connect_error) {
-  die("connection error : " . $conn->connect_error);
+    if ($this->conn->connect_error) {
+      die('Connection Error!' . $this->conn->connect_error);
+    }
+  }
+
+  public function getConnection()
+  {
+    return $this->conn;
+  }
 }
-
-// echo "connect success";

@@ -115,13 +115,14 @@ input {
 /* ERROR MESSAGE */
 form .error {
   background-color: red;
-  width: 70%;
+  width: auto;
   height: 40px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 15px;
   border-radius: 30px;
 }
 

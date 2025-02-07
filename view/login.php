@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once '../connection.php';
 require_once '../controller/LoginController.php';
 
 $error_message = '';
@@ -14,7 +13,7 @@ if (isset($_POST['login'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $login = new LoginController($conn);
+  $login = new LoginController();
   $isAuthenticated = $login->authenticated($username, $password);
 
   if ($isAuthenticated) {

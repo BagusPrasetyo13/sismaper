@@ -1,18 +1,13 @@
 <?php
 require_once '../connection.php';
-class LoginController
+class LoginController extends Database
 {
-  private $conn;
   private $error_message = '';
 
-  public $username;
-  private $password;
-
-  public function __construct($conn)
+  public function __construct()
   {
-    $this->conn = $conn;
+    parent::__construct(); // Panggil constructor Database
   }
-
   public function authenticated($username, $password)
   {
     // CEK JIKA INPUTAN DARI USER KOSONG
