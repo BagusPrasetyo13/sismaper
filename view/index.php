@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once '../connection.php';
 
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
   header("location: login.php");
@@ -15,11 +14,108 @@ if (isset($_POST['logout'])) {
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-<form action="index.php" method="POST">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../public/css/style.css">
+  <title>SISMAPER - Admin Page</title>
+</head>
 
-  <button name="logout" type="submit">
-    LOGOUT
-  </button>
+<body>
+  <div class="dashboard-container">
+    <!-- SIDEBAR START -->
+    <aside id="sidebar">
+      <div class="sidebar-widget">
 
-</form>
+        <div class="sidebar-logo">
+          <a href="#">SISMAPER</a>
+        </div>
+
+        <button class="toggle-btn" type="button">
+          <i id="icon" class='bx bxs-chevrons-left'></i>
+        </button>
+
+      </div>
+
+      <!-- SIDEBAR MENU -->
+      <ul class="sidebar-navigation">
+        <li class="sidebar-item">
+          <a href="" class="sidebar-link">
+            <i class='bx bxs-dashboard'></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="" class="sidebar-link">
+            <i class='bx bx-book-open'></i>
+            <span>Data Buku</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="" class="sidebar-link">
+            <i class='bx bx-group'></i>
+            <span>Data Peminjam</span>
+          </a>
+        </li>
+      </ul>
+      <!-- SIDEBAR MENU END -->
+
+      <!-- SIDEBAR FOOTER -->
+      <div class="sidebar-footer">
+        <form action="index.php" method="POST">
+          <li class="sidebar-item">
+            <button type="submit" name="logout" class="sidebar-link">
+              <i class='bx bx-log-out-circle'></i>
+              <span>Logout</span>
+            </button>
+          </li>
+        </form>
+      </div>
+      <!-- SIDEBAR FOOTER END -->
+    </aside>
+    <!-- SIDEBAR END -->
+
+    <!-- MAIN DASHBOARD SECTION -->
+    <div class="main">
+      <nav>
+        <form action="" class="search">
+          <div class="input-group">
+            <input type="text" name="search" id="" placeholder="Search">
+            <button>
+              <i class='bx bx-search-alt'></i>
+            </button>
+          </div>
+        </form>
+        <div class="nav-content">
+
+          <ul class="nav-account">
+            <li class="user-link">
+              <a href="">
+                <img src="../public/images/account.png" class="avatar" alt="">
+              </a>
+              <div class="user-link-dropdown">
+                <a href="" class="user-dropdown">
+                  <i class='bx bx-info-circle'></i>
+                  <span>Information</span>
+                </a>
+                <a href="" class="user-dropdown">
+                  <i class='bx bx-log-out-circle'></i>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- MAIN DASHBOARD SECTION END -->
+  </div>
+
+  <script src="../public/js/script.js"></script>
+</body>
+
+</html>

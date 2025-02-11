@@ -2,8 +2,6 @@
 session_start();
 require_once '../controller/LoginController.php';
 
-$error_message = '';
-
 if (isset($_SESSION['status']) && $_SESSION['status'] == 'login') {
   header('location: index.php');
   exit;
@@ -73,8 +71,6 @@ if (isset($_POST['login'])) {
           <button type="submit" name="login" class="button">
             Login
           </button>
-
-          <p>have'nt account yet? <a href="register.php">register</a></p>
         </form>
 
       </div>

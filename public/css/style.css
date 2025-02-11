@@ -39,7 +39,7 @@
   height: 100%;
 }
 
-form {
+.login-page form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -49,44 +49,44 @@ form {
   margin: 0 auto;
 }
 
-form .username,
-form .password {
+.login-page form .username,
+.login-page form .password {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.form-box .logo {
+.login-page .form-box .logo {
   display: flex;
   align-items: center;
   padding: 3px 25px;
 }
 
-.form-box .logo img {
+.login-page .form-box .logo img {
   height: 50px;
   width: 50px;
   margin-right: 10px;
 }
 
-.form-box .logo span {
+.login-page .form-box .logo span {
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 22px;
   font-family: "Playfair Display", serif;
 }
 
-form .text p {
+.login-page form .text p {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
-form .text span {
+.login-page .text span {
   font-size: 15px;
   font-weight: 300;
 }
 
-input {
+.login-page input {
   width: 100%;
   padding: 8px 14px;
   border: 1px solid #ccc;
@@ -95,7 +95,7 @@ input {
   outline: none;
 }
 
-.button {
+.login-page .button {
   background: #e3b1d2;
   color: white;
   text-align: center;
@@ -108,12 +108,12 @@ input {
   margin-top: 30px;
 }
 
-.button:hover {
+.login-page .button:hover {
   background: #b4d2ed;
 }
 
 /* ERROR MESSAGE */
-form .error {
+.login-page form .error {
   background-color: red;
   width: auto;
   height: 40px;
@@ -126,6 +126,173 @@ form .error {
   border-radius: 30px;
 }
 
-form .error p {
+.login-page form .error p {
   color: white;
 }
+
+/* SIDEBAR */
+#sidebar {
+  background-color: #0b0f19;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-width: 300px;
+  transition: all 0.25s ease-in-out;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+#sidebar.minimize {
+  width: 90px;
+  min-width: 90px;
+}
+
+#sidebar .sidebar-widget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1.5px solid #606164;
+}
+
+#sidebar .toggle-btn {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  border-radius: 0.425rem;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #323c55;
+  border: none;
+}
+
+#sidebar.minimize .sidebar-logo,
+#sidebar.minimize a.sidebar-link span {
+  display: none;
+}
+
+#sidebar .sidebar-logo a {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+#sidebar .sidebar-nav {
+  padding: 0;
+  flex: 1 1 auto;
+}
+
+#sidebar a.sidebar-link {
+  padding: 0.625rem 1.625rem;
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  white-space: nowrap;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+#sidebar .sidebar-link i {
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+}
+
+#sidebar .sidebar-item {
+  position: relative;
+  margin: 5px 0;
+}
+
+#sidebar a.sidebar-link:hover,
+#sidebar .sidebar-item.active {
+  background-color: #aeaeae29 !important;
+  border-left: 3px solid #7257f2 !important;
+}
+/* SIDEBAR END */
+
+/* DASHBOARD MAIN */
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-container .main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.25 ease-in-out;
+  background-color: #fff;
+}
+
+.dashboard-container nav {
+  display: flex;
+  padding: 1rem 1.5rem;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  box-shadow: 0 0 2rem rgba(33, 37, 41, 0.1);
+}
+
+.dashboard-container .main form {
+  display: none;
+}
+
+.dashboard-container nav .nav-content {
+  min-width: 200px;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.dashboard-container nav .nav-content .nav-account {
+  margin-left: auto;
+}
+
+.dashboard-container nav .nav-content .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.dashboard-container nav .nav-content .user-link {
+  position: relative;
+  list-style: none;
+}
+
+.dashboard-container nav .user-link-dropdown {
+  display: none;
+}
+
+.dashboard-container nav .user-link-dropdown.show {
+  position: absolute;
+  right: 0;
+  left: auto;
+  margin-top: 1rem;
+  background-color: #fff;
+  padding-top: 0.5rem;
+  box-shadow: 0 0.5 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-container nav .nav-account .user-dropdown {
+  display: block;
+  width: 100%;
+  padding: 0.4rem 1rem;
+  color: #212529;
+  white-space: nowrap;
+  clear: both;
+}
+
+.dashboard-container nav .nav-account .user-dropdown i {
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+}
+
+.divider {
+  margin: 0.5rem;
+}
+/* DASHBOARD MAIN END */
