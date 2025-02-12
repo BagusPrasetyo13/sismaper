@@ -1,15 +1,15 @@
 <?php
 session_start();
 
+require_once '../controller/AuthController.php';
+
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
   header("location: login.php");
   exit;
 }
 
 if (isset($_POST['logout'])) {
-  session_destroy();
-  header("location: login.php");
-  exit;
+  AuthController::logout();
 }
 
 ?>
@@ -63,25 +63,13 @@ if (isset($_POST['logout'])) {
         </li>
       </ul>
       <!-- SIDEBAR MENU END -->
-
-      <!-- SIDEBAR FOOTER -->
-      <div class="sidebar-footer">
-        <form action="index.php" method="POST">
-          <li class="sidebar-item">
-            <button type="submit" name="logout" class="sidebar-link">
-              <i class='bx bx-log-out-circle'></i>
-              <span>Logout</span>
-            </button>
-          </li>
-        </form>
-      </div>
-      <!-- SIDEBAR FOOTER END -->
     </aside>
     <!-- SIDEBAR END -->
 
     <!-- MAIN DASHBOARD SECTION -->
     <div class="main">
       <nav>
+
         <form action="" class="search">
           <div class="input-group">
             <input type="text" name="search" id="" placeholder="Search">
@@ -90,27 +78,58 @@ if (isset($_POST['logout'])) {
             </button>
           </div>
         </form>
-        <div class="nav-content">
 
+        <div class="nav-content">
           <ul class="nav-account">
             <li class="user-link">
               <a href="">
                 <img src="../public/images/account.png" class="avatar" alt="">
               </a>
               <div class="user-link-dropdown">
-                <a href="" class="user-dropdown">
+                <a href="#" class="user-dropdown">
                   <i class='bx bx-info-circle'></i>
                   <span>Information</span>
                 </a>
-                <a href="" class="user-dropdown">
-                  <i class='bx bx-log-out-circle'></i>
-                  <span>Logout</span>
+                <a href="#" class="user-dropdown">
+                  <i class='bx bx-info-circle'></i>
+                  <span>Settings</span>
                 </a>
+                <div class="divider"></div>
+                <form action="index.php" method="POST" class="logout">
+                  <button type="submit" name="logout" class="user-dropdown">
+                    <i class='bx bx-log-out-circle'></i>
+                    <span>Logout</span>
+                  </button>
+                </form>
               </div>
             </li>
           </ul>
         </div>
+
       </nav>
+
+      <div class="content">
+        <h2>Admin Dashboard</h2>
+
+        <div class="dashboard-content">
+          <div class="main-cards">
+            <div class="card">
+              <div class="card-content">
+                <h6 class="title">Members</h6>
+                <h6 class="amount">Rp. 700000</h6>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-content">
+                <h6 class="title">Members</h6>
+                <h6 class="amount">Rp. 700000</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
     <!-- MAIN DASHBOARD SECTION END -->
   </div>

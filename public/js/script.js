@@ -3,7 +3,6 @@ const hamburger = document.querySelector(".toggle-btn");
 const toggler = document.querySelector("#icon");
 const sidebar = document.querySelector("#sidebar");
 const sidebarItems = document.querySelectorAll(".sidebar-item a");
-const userProfile = document.querySelector(".user-link");
 
 hamburger.addEventListener("click", function () {
   document.querySelector("#sidebar").classList.toggle("minimize");
@@ -26,8 +25,17 @@ sidebarItems.forEach((item) => {
 });
 
 // User link dropdown
+
+const userProfile = document.querySelector(".user-link");
+
 userProfile.addEventListener("click", function (event) {
   event.preventDefault();
-  const dropdown = userProfile.querySelector(".user-link-dropdown");
-  dropdown.classList.toggle("show");
+  document.querySelector(".user-link-dropdown").classList.toggle("show");
+});
+
+// Tambahkan event khusus untuk tombol logout
+const logoutButton = document.querySelector(".logout button");
+
+logoutButton.addEventListener("click", function (event) {
+  event.stopPropagation(); // Mencegah event lain memblokir submit form
 });

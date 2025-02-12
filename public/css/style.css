@@ -268,31 +268,60 @@
   display: none;
 }
 
-.dashboard-container nav .user-link-dropdown.show {
+.user-link-dropdown .logout {
+  display: block !important;
+}
+
+.user-link-dropdown.show {
   position: absolute;
   right: 0;
   left: auto;
   margin-top: 1rem;
   background-color: #fff;
   padding-top: 0.5rem;
-  box-shadow: 0 0.5 1rem rgba(0, 0, 0, 0.15);
+  display: block !important;
+  box-shadow: 0 0.5 1rem rgba(0, 0, 0, 1);
 }
 
-.dashboard-container nav .nav-account .user-dropdown {
+.user-dropdown {
   display: block;
   width: 100%;
   padding: 0.4rem 1rem;
   color: #212529;
   white-space: nowrap;
   clear: both;
+  text-decoration: none;
 }
 
-.dashboard-container nav .nav-account .user-dropdown i {
+.user-dropdown i {
   font-size: 1.1rem;
   margin-right: 0.75rem;
 }
 
 .divider {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
+  border-top: 1px solid #b2b2b2;
 }
+
+.main .content {
+  padding: 1rem 1.5rem;
+  flex: 1 1 auto;
+}
+
+.main .content .dashboard-content {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.main .main-cards {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.main .card {
+  background-color: #84c9ef;
+  padding: 1rem 1.5rem;
+}
+
 /* DASHBOARD MAIN END */

@@ -1,6 +1,6 @@
 <?php
 require_once '../connection.php';
-class LoginController extends Database
+class AuthController extends Database
 {
   private $error_message = '';
 
@@ -32,6 +32,15 @@ class LoginController extends Database
       $this->error_message = 'username atau password salah';
       return false;
     }
+  }
+
+  public static function logout()
+  {
+    session_start();
+    session_unset();
+    session_destroy();
+    header('location:login.php');
+    exit();
   }
 
   public function getErrorMsg()

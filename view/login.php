@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../controller/LoginController.php';
+require_once '../controller/AuthController.php';
 
 if (isset($_SESSION['status']) && $_SESSION['status'] == 'login') {
   header('location: index.php');
@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $login = new LoginController();
+  $login = new AuthController();
   $isAuthenticated = $login->authenticated($username, $password);
 
   if ($isAuthenticated) {
